@@ -17,6 +17,8 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+require 'rails/test_unit/railtie'
+
 module Depot
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -28,6 +30,5 @@ module Depot
     # the framework and any gems in your application.
 
     # Don't generate system test files.
-    config.generators.system_tests = nil
   end
 end
