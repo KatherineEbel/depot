@@ -64,4 +64,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to products_url
   end
+
+  test 'should display products' do
+    get products_url
+    assert_select 'tbody tr', products.count
+  end
 end
