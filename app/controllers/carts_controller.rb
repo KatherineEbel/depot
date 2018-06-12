@@ -62,6 +62,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to store_index_url, notice: 'Your cart is currently empty' }
+      format.js { flash.now[:notice] = 'Your cart is currently empty' }
       format.json { head :no_content }
     end
   end
