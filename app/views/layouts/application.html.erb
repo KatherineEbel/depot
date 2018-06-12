@@ -16,6 +16,11 @@
     </header>
     <section class="content">
       <nav class="side_nav">
+        <% if @cart %>
+          <div id="cart" class="carts">
+            <%= render @cart %>
+          </div>
+        <% end %>
         <h4><%= Time.now.strftime "%b %m, %Y %I:%M:%S" %></h4>
         <ul>
           <li><a href="/">Home</a></li>
