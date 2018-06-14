@@ -30,3 +30,6 @@
 /config/master.key
 
 .idea/
+/public/packs-test
+yarn-debug.log*
+.yarn-integrity
