@@ -57,4 +57,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'activemodel-serializers-xml', '~> 1.0', '>= 1.0.2'
 gem 'webpacker', '~> 3.5', '>= 3.5.3'
