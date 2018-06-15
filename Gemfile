@@ -41,6 +41,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 3.2', '>= 3.2.1'
   gem 'selenium-webdriver'
+  gem 'chromedriver-helper', '~> 1.2'
 end
 
 group :development do

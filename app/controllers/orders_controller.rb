@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: %i[new create]
@@ -12,8 +14,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1
   # GET /orders/1.json
-  def show
-  end
+  def show; end
 
   # GET /orders/new
   def new
@@ -21,8 +22,7 @@ class OrdersController < ApplicationController
   end
 
   # GET /orders/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /orders
   # POST /orders.json
@@ -76,13 +76,26 @@ class OrdersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type)
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_params
+    params.require(:order).permit(:name, :address, :email, :pay_type)
+  end
+
+  def pay_type_params
+    if order_params[:pay_type] == 'Credit Card'
+      params.require(:order).permit(:credit_card_number, :expiration_date)
+    elsif order_params[:pay_type] == 'Check'
+      params.require(:order).permit(:routing_number, :account_number)
+    elsif order_params[:pay_type] == 'Purchase Order'
+      params.require(:order).permit(:po_number)
+    else
+      {}
     end
+  end
 end

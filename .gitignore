@@ -33,3 +33,6 @@
 /public/packs-test
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore source-maps
+public/packs/*.js.map
