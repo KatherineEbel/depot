@@ -30,9 +30,6 @@
 /config/master.key
 
 .idea/
-/public/packs-test
-yarn-debug.log*
-.yarn-integrity
 
-# Ignore source-maps
-public/packs/
+public/packs-test
+public/packs
