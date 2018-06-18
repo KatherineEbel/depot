@@ -32,5 +32,7 @@ module Depot
     # the framework and any gems in your application.
 
     # Don't generate system test files.
+
+    config.middleware.use I18n::JS::Middleware
   end
 end

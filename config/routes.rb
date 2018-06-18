@@ -11,9 +11,11 @@ Rails.application.routes.draw do
   resources :products do
     get :who_bought, on: :member
   end
-  resources :orders
-  resources :line_items
-  resources :carts
-  root 'store#index', as: 'store_index'
 
+  scope '(:locale)' do
+    resources :orders
+    resources :line_items
+    resources :carts
+    root 'store#index', as: 'store_index'
+  end
 end
